@@ -9,7 +9,6 @@ public class ColliderArcher : MonoBehaviour {
 	public float MoveSpeed = 2.5f;
 	public int DetectionDistance = 10;
 	public int MinimumDistance = 5;
-	private bool isWalking = false;
 
 	void Start () 
 	{
@@ -18,7 +17,7 @@ public class ColliderArcher : MonoBehaviour {
 
 	void Update () 
 	{
-		transform.LookAt(Player);
+		transform.LookAt (new Vector3 (Player.position.x, 2.75f, Player.position.z));
 
 		// if Player is in detection area
 		if (Vector3.Distance (transform.position, Player.position) <= DetectionDistance) {
