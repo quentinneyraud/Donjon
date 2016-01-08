@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CollisionEpee : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -13,7 +14,11 @@ public class CollisionEpee : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision coll) {
-		Debug.Log (coll.gameObject.tag);
+	void OnTriggerEnter(Collider coll){
+		Debug.Log ("enter");
+		if (coll.gameObject.tag == "Ennemies") {
+			coll.transform.Rotate (Vector3.back);
+		}
 	}
+
 }
