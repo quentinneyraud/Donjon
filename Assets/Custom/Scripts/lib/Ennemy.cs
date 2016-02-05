@@ -52,7 +52,7 @@ public class Ennemy : Character {
 	}
 
 	protected void Fire(){
-		GameObject bullet = Instantiate (projectile, new Vector3(this.transform.position.x + 0.5f, this.transform.position.y + 0.5f, this.transform.position.z), this.transform.rotation) as GameObject;
+		GameObject bullet = Instantiate (projectile, new Vector3(this.transform.position.x, this.transform.position.y + 0.5f, this.transform.position.z), this.transform.rotation) as GameObject;
 		bullet.GetComponent<Rigidbody>().transform.LookAt (new Vector3(Player.transform.position.x, Player.transform.position.y + 0.5f, Player.transform.position.z));
 		bullet.GetComponent<Rigidbody>().AddForce (transform.forward * this.projectilSpeed);
 		//this.bullets.Add (bullet);

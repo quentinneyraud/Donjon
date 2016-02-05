@@ -111,6 +111,9 @@ public class Hero : Character
 	void OnTriggerEnter(Collider coll){
 		if (coll.gameObject.tag == "Bullet") {
 			this.isAttacked ();
+		} else if (coll.gameObject.tag == "healthBonus") {
+			this.life = (int)this.healthBar.maxValue;
+			this.healthBar.value = this.healthBar.maxValue;
 		}
 	}
 

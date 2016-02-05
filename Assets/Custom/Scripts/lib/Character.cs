@@ -66,7 +66,9 @@ public abstract class Character : MonoBehaviour {
 		if (this.canBeAttacked) {
 			// Remove 1 life
 			this.life--;
-			this.healthBar.value --;
+			if (this.healthBar) {
+				this.healthBar.value--;
+			}
 			if (this.life <= 0) {
 				this.Dead ();
 			} else {
